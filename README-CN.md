@@ -1,40 +1,37 @@
 <div align="center">
-  <h1>Vue Color Avatar</h1>
+  <h1>Live Echo Avatar</h1>
 
-  <p>🧑‍🦱 一个纯前端实现的头像生成网站 🧑‍🦳</p>
+  <p>🧑‍🦱 一个多巴胺风格的现代化头像生成器 🧑‍🦳</p>
 
-[Read in English](./README.md)
+[English](./README.md) | [简体中文](./README-CN.md)
 
 </div>
 
-<a href="https://vue-color-avatar.leoku.dev">
-  <img src="./images/social-preview-1.png" alt="website-cover" />
-</a>
+<img src="./images/social-preview-1.png" alt="website-cover" />
 
 ## 在线预览
 
-[`https://vue-color-avatar.leoku.dev`](https://vue-color-avatar.leoku.dev)
+[`https://liveecho.hoshinoai.xin`](https://liveecho.hoshinoai.xin)
 
 ## 介绍
 
 **这是一款矢量风格头像的生成器，你可以搭配不同的素材组件，生成自己的个性化头像。**
 
-你可能感兴趣的功能：
+特色功能：
 
-- 可视化组件配置栏
+- 现代简约多巴胺设计风格
+- 可视化组件配置面板
 - 随机生成头像，有一定概率触发彩蛋
-- 撤销/还原*更改*
+- 撤销/还原操作
 - 国际化多语言
 - 批量生成多个头像
 - 一键分享到社交媒体
+- 响应式设计，支持移动设备
 
 ## 设计资源
 
-- 设计师：[@Micah](https://www.figma.com/@Micah) on Figma
-- 素材来源：[Avatar Illustration System](https://www.figma.com/community/file/829741575478342595)
-
-> **Note**  
-> 虽然该项目是 MIT 协议，但是素材资源基于 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 协议。如果你有好的创意素材，欢迎补充！
+> **注意**  
+> 头像素材基于 Micah Lanier 的 [Avatar Illustration System](https://www.figma.com/community/file/829741575478342595) 实现。根据 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 许可使用。
 
 ## 项目开发
 
@@ -42,27 +39,48 @@
 
 ```sh
 # 1. 克隆项目至本地
-git clone https://github.com/Codennnn/vue-color-avatar.git
+git clone https://github.com/Calculusai/Liveecho.git
 
 # 2. 安装项目依赖
-yarn install
+npm install
 
 # 3. 运行项目
-yarn dev
+npm run dev
 ```
 
-### Docker 快速部署
+## 构建部署
 
 ```sh
-#下载代码
-git clone https://github.com/Codennnn/vue-color-avatar.git
+# 构建生产版本
+npm run build
 
-#docker 编译
-cd vue-color-avatar/
-docker build -t vue-color-avatar:latest .
-
-#启动服务
-docker run -d -p 3000:80 --name vue-color-avatar vue-color-avatar:latest
+# 预览生产构建
+npm run preview
 ```
 
-最后，打开你的浏览器访问服务的地址 http://localhost:3000 即可。
+## Docker 快速部署
+
+```sh
+# 下载代码
+git clone https://github.com/Calculusai/Liveecho.git
+
+# docker 编译
+cd Liveecho/
+docker build -t liveecho-avatar:latest .
+
+# 启动服务
+docker run -d -p 3000:80 --name liveecho-avatar liveecho-avatar:latest
+```
+
+容器运行后，打开浏览器访问：
+
+- http://localhost:3000 (本地运行)
+- http://your-server-ip:3000 (服务器运行)
+
+## 贡献
+
+欢迎提交 Issue 或 Pull Request!
+
+## 许可证
+
+[MIT](./LICENSE)

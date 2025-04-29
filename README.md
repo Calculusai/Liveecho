@@ -1,68 +1,86 @@
 <div align="center">
-  <h1>Vue Color Avatar</h1>
+  <h1>Live Echo Avatar</h1>
 
-  <p>🧑‍🦱 A playful avatar generator 🧑‍🦳</p>
+  <p>🧑‍🦱 A modern dopamine-style avatar generator 🧑‍🦳</p>
 
-[简体中文](./README-CN.md)
+[English](./README.md) | [简体中文](./README-CN.md)
 
 </div>
 
-<a href="https://vue-color-avatar.leoku.dev">
-  <img src="./images/social-preview-1.png" alt="website-cover" />
-</a>
+<img src="./images/social-preview-1.png" alt="website-cover" />
 
 ## Preview
 
-[`https://vue-color-avatar.leoku.dev`](https://vue-color-avatar.leoku.dev)
+[`https://liveecho.hoshinoai.xin`](https://liveecho.hoshinoai.xin)
 
 ## Introduction
 
-**This is a vector style avatar generator, you can match different material components to generate your own personalized avatar.**
+**This is a vector style avatar generator where you can mix and match different material components to create your personalized avatar.**
 
-Features you might be interested in:
+Key Features:
 
-- Visual component configuration bar
-- Randomly generate an avatar
-- Redo/Undo
-- i18n
-- Generate multiple avatars in batch
+- Modern minimalist dopamine-style design
+- Visual component configuration panel
+- Random avatar generation
+- Undo/Redo operations
+- Internationalization support
+- Batch generation of multiple avatars
 - Share to social media platforms
+- Responsive design, mobile device support
 
-## Assets
+## Resources
 
 > **Note**  
-> The avatar assets implementation of [Avatar Illustration System](https://www.figma.com/community/file/829741575478342595) by Micah Lanier. And the licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+> Avatar assets are based on [Avatar Illustration System](https://www.figma.com/community/file/829741575478342595) by Micah Lanier. Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-## Develop
+## Development
 
 This project is built with `Vue3` + `Vite`.
 
 ```sh
-# 1. Clone project
-git clone https://github.com/Codennnn/vue-color-avatar.git
+# 1. Clone the project
+git clone https://github.com/Calculusai/Liveecho.git
 
 # 2. Install dependencies
-yarn install
+npm install
 
-# 3. Run
-yarn dev
+# 3. Run development server
+npm run dev
 ```
 
-## Docker deploy
+## Build & Deploy
 
 ```sh
-#clone the code
-git clone https://github.com/Codennnn/vue-color-avatar.git
+# Build for production
+npm run build
 
-#docker build
-cd vue-color-avatar/
-docker build -t vue-color-avatar:latest .
+# Preview production build
+npm run preview
+```
 
-#start server
-docker run -d -p 3000:80 --name vue-color-avatar vue-color-avatar:latest
+## Docker Deployment
+
+```sh
+# Clone the code
+git clone https://github.com/Calculusai/Liveecho.git
+
+# Docker build
+cd Liveecho/
+docker build -t liveecho-avatar:latest .
+
+# Start server
+docker run -d -p 3000:80 --name liveecho-avatar liveecho-avatar:latest
 ```
 
 Once the container is running, open your browser and visit:
 
 - http://localhost:3000 (if running locally)
 - http://your-server-ip:3000 (if running on a server)
+
+## Contribution
+
+Issues and Pull Requests are welcome!
+
+## License
+
+[MIT](./LICENSE)
