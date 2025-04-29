@@ -1,5 +1,5 @@
 <template>
-  <div class="action-menu">
+  <div class="action-menu glass">
     <div
       v-for="ac in actions"
       :key="ac.type"
@@ -67,30 +67,46 @@ const actions = computed(() => [
 .action-menu {
   display: flex;
   align-items: center;
-  margin-top: 4rem;
-  padding: 0.6rem;
-  background-color: var.$color-gray;
+  padding: 0.5rem;
+  background: rgba(25, 25, 35, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var.$border-radius-lg;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var.$shadow-md;
 
   .menu-item {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    margin: 0 0.5rem;
-    background-color: var.$color-configurator;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0 0.4rem;
+    background: rgba(255, 255, 255, 0.04);
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.1, 0.7, 0.5, 1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all var.$transition-normal cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(var.$color-accent, 0.15), rgba(var.$color-secondary, 0.15));
+      opacity: 0;
+      transition: opacity var.$transition-fast;
+      z-index: 0;
+    }
     
     &:hover:not(.disabled) {
-      transform: translateY(-3px);
-      background-color: var.$color-accent;
+      transform: translateY(-2px);
+      box-shadow: var.$shadow-sm;
+      
+      &::before {
+        opacity: 1;
+      }
     }
     
     &:active:not(.disabled) {
@@ -98,35 +114,37 @@ const actions = computed(() => [
     }
 
     &.disabled {
-      cursor: default;
-      opacity: 0.4;
+      cursor: not-allowed;
+      opacity: 0.35;
     }
     
     img {
-      width: 1.5rem;
-      height: 1.5rem;
-      transition: transform 0.3s ease;
+      width: 1.2rem;
+      height: 1.2rem;
+      transition: transform var.$transition-fast ease;
+      z-index: 1;
+      position: relative;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
     }
     
     &:hover:not(.disabled) img {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
   }
 }
 
 @media (max-width: var.$screen-md) {
   .action-menu {
-    margin-top: 3rem;
-    padding: 0.5rem;
+    padding: 0.4rem;
     
     .menu-item {
-      width: 2.8rem;
-      height: 2.8rem;
-      margin: 0 0.4rem;
+      width: 2.3rem;
+      height: 2.3rem;
+      margin: 0 0.3rem;
       
       img {
-        width: 1.4rem;
-        height: 1.4rem;
+        width: 1.1rem;
+        height: 1.1rem;
       }
     }
   }

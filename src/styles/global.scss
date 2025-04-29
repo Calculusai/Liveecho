@@ -1,6 +1,6 @@
 @use 'src/styles/var';
 /* stylelint-disable-next-line no-invalid-position-at-import-rule */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 /* stylelint-disable-next-line no-invalid-position-at-import-rule */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -21,32 +21,34 @@ body {
   margin: 0;
   font-size: 16px;
   font-family: 'Outfit', Fallback;
+  font-weight: 400;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var.$color-page-bg;
   color: var.$color-text;
   line-height: 1.6;
+  letter-spacing: 0.01em;
 }
 
 /* 现代化的滚动条样式 */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var.$border-radius-sm;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-  transition: background 0.3s;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var.$border-radius-sm;
+  transition: background var.$transition-fast;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -56,19 +58,49 @@ img {
 }
 
 ::selection {
-  background: rgba(var.$color-accent, 0.4);
+  background: rgba(var.$color-accent, 0.5);
   color: white;
 }
 
 /* 按钮和交互元素的过渡效果 */
 button,
 a {
-  transition: all 0.2s ease;
+  transition: all var.$transition-fast ease;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* 通用按钮样式 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: var.$border-radius-md;
+  cursor: pointer;
+  box-shadow: var.$shadow-sm;
+  transition: all var.$transition-fast;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  color: var.$color-text;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var.$shadow-md;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }
 
 /* 通用动画效果 */
 .fade-in {
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn var.$transition-normal ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -81,10 +113,44 @@ a {
   }
 }
 
+.slide-up {
+  animation: slideUp var.$transition-normal ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 阴影和模糊效果 */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var.$shadow-sm;
+}
+
 /* 提高代码字体的易读性 */
 code,
 pre {
   font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+}
+
+/* 容器和卡片样式 */
+.card {
+  background: var.$color-dark;
+  border-radius: var.$border-radius-lg;
+  padding: var.$spacing-lg;
+  box-shadow: var.$shadow-md;
 }
 
 #app {

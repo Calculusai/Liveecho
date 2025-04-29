@@ -13,6 +13,7 @@ export const en = {
     copied: 'Copied',
     downloading: 'Downloading',
     close: 'Close',
+    share: 'Share',
   },
   label: {
     wrapperShape: 'Avatar Shape',
@@ -45,5 +46,18 @@ export const en = {
     downloadingMultiple: 'Downloading',
     downloadMultipleTip: 'Automatically generated',
     regenerate: 'Regenerate',
+  },
+  share: {
+    title: 'Share Your Avatar',
+    twitter: 'Twitter',
+    facebook: 'Facebook',
+    weibo: 'Weibo',
+    wechat: 'WeChat',
+    qrcodeTitle: 'WeChat Share',
+    scanToShare: 'Scan the QR code to share to WeChat',
+    wechatTip: 'Open WeChat and scan the QR code to share',
+    qrcodeError: 'Failed to generate QR code',
+    copyLink: 'Copy Link',
+    linkCopied: 'Link copied to clipboard!',
   },
 }

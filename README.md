@@ -26,6 +26,7 @@ Features you might be interested in:
 - Redo/Undo
 - i18n
 - Generate multiple avatars in batch
+- Share to social media platforms
 
 ## Assets
 
